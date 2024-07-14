@@ -1,0 +1,141 @@
+
+Recap:
+
+  1. Component Life Cycle:
+
+      Initialization: JS Loads the JSX into the memory
+
+      Mounting: JSX gets loaded into the RealDOM
+
+      Updating: Some contents or state gets updated in the Component JSX
+
+      Unmounting: Removing the element from the RealDOM
+
+  2. Life Cycle Hook - useEffect
+
+      We are gonna target each of the phases and we are going to do something those phases( Mounting, Updating, Unmounting )
+
+      Mounted: useEffect with Mounted
+        Examples: Calculating initial value or loading some data from APIs
+        
+        useEffect(() => {
+          // Statements to execute on Mouted phase 
+          setMounted(true);
+        }, []);
+    
+      Updated: Liking a particular product / post in instagram
+        useEffect(() => {
+          // mounted is a boolean state for mounting
+          if (mounted) {
+            // Statements to execute on update phase 
+            // dependency array is must
+
+          }
+
+        }, [<dep-val>]);
+    
+
+      Unmounting: Deleting a product from Cart
+        useEffect(() => {
+          
+          return () => {
+            // Statements to execute on un-Mouted phase 
+          }
+
+        }, []);
+   
+Topics:
+
+  1. CRUD implementations for the products or similar application 
+
+      product:
+        image: string ( Image URL )
+        name: string
+        price: number
+        quantity: number
+        id: auto-generated using uuid ( ** not inputed from User ** )
+
+      CRUD:
+        Without API
+
+        C - Create
+          Provide a form to create a new item, the created item should be displayed in the UI
+
+        D - Delete
+          Delete a product from the list
+
+        R - Read
+          display those records from the State Variable
+
+  2. React-Router-DOM
+    Window Objects:
+      location -> details current url and location
+        https://developer.mozilla.org/en-US/docs/Web/API/Window/location
+      history -> track of the history of urls
+        https://developer.mozilla.org/en-US/docs/Web/API/Window/history
+
+    react-router-dom:
+      Routing the DOM using/based on the url path,
+
+        uses window props location, history
+
+      Create Different Pages like below,
+
+      / -> Home -  All the Home Pages Details here
+      /skills -> All the Skills should be displayed here
+      /about -> all the about information should be displayed here
+      /contact -> all the contact information should be displayed here
+    
+      BrowserRouter: (Main Browser Tag in React Router)
+        parent wrapper tag which includes the routes tag
+
+      Routes:
+        includes all the routes
+
+      Route:
+        route with a pathname binds a dom to the path
+
+      Default Route:
+        default dom element when no route/path is found
+        use * as path
+
+      Link:
+        Link - anchor to a specific path
+        Navigates from one page to the other page
+        no reload, only DOM content changes
+
+      Router Netlify Config:
+        1. Create _reditects ( /* /index.html 200 ) file in public folder
+        
+        2then You deploy in netlify
+
+Next Session:
+  path params:
+    useParams
+
+  query params:
+    useSearchParams
+
+  U - Update
+    Update a selected student
+        
+  react-router-dom
+    layout
+    navigation
+  
+  Props Drilling
+
+Task:
+
+  Day 23:
+    https://docs.google.com/document/d/1frCM6keoI6YKQqxm0XbgEP2CCZjDH5Zi8wEp_NXtk2g/edit
+
+  Day 24:
+   https://docs.google.com/document/d/1nuVbWYwyP7N1zC9rAoO0taVvthGWsaHH-nfhNdklTQw/edit
+
+   Create simple Link for three different pages,
+    /full-stack
+    /data-science
+    /cyber-security
+  
+  React Router DOM
